@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Sidebar from './Sidebar';
 import './App.css';
 
 let animals = [
@@ -108,9 +109,17 @@ class Animals extends Component {
     };
   }
 
+  onDelete(id) {
+    const updatedAnimals = this.state.animals.filter(
+      (item) => item.animalId !== id
+    );
+    this.setState({ animals: updatedAnimals });
+    console.log(`Delete item with id: `, id);
+  }
+
   render() {
     return (
-      <div className='main'>
+      <div className="animals">
         {this.state.animals
           // .filter(searchIt(this.state.searchTerm))
           .map((animal, idx) => {
@@ -129,11 +138,19 @@ class Animals extends Component {
                 <div className="extra content">
                   <button className="ui blue button">Like</button>
                   <button className="ui red button">Dislike</button>
-                  <button className="ui button">Discard</button>
+                  <button
+                    className="ui button"
+                    onClick={() => {
+                      return this.onDelete(animal.animalId);
+                    }}
+                  >
+                    Discard
+                  </button>
                 </div>
               </div>
             );
           })}
+        <Sidebar />
       </div>
     );
   }
