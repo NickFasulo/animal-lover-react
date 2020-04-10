@@ -1,22 +1,30 @@
-.App {
-  margin: 0;
-  padding: 0;
+h1 {
+  padding: 1.5rem 0 1rem 6rem;
 }
 
 .animals {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: 5rem;
-  padding: 0;
-  width: 60%;
+  margin: 0 0 5rem 5rem;
+  width: 63.5%;
 }
 
-/* .sidebar {
+#item {
+  background-color: #3c3c3c;
+}
 
-} */
+#item .header {
+  color: white;
+}
 
-h1 {
-  margin: 1rem 0 2rem 5rem;
-  padding: 1rem 0 0 0;
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#likes {
+  margin-top: 3rem;
+}
+
+#dislikes {
+  margin: 3rem 0 3rem 0;
 }
